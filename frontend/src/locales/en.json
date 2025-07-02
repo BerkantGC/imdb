@@ -1,0 +1,58 @@
+{
+    "home": {
+        "title": "Welcome to Our Movie App",
+        "description": "Watch the latest and most popular movies for free. Explore our best movie collection.",
+        "search_placeholder": "Search by title, summary, actors...",
+        "search_button": "Search",
+        "language_switch": "Switch to Turkish",
+        "top_movies": "Top 10 Popular Movies"
+    },
+    "header": {
+        "home": "Home",
+        "watchlist": "Watchlist",
+        "profile": "Profile",
+        "login": "Login",
+        "logout": "Logout",
+        "register": "Register",
+        "welcome": "Welcome, {name}"
+    },
+    "navigation": {
+        "portal": "Home",
+        "vault": "Collection",
+        "profile": "Profile",
+        "access": "Login",
+        "initialize": "Register",
+        "disconnect": "Logout",
+        "greetings": "Hello, {username}"
+    },
+    "profile": {
+        "title": "User Profile",
+        "subtitle": "Manage your account information and settings",
+        "member_since": "Member since",
+        "admin": "Admin",
+        "edit_profile": "Edit Profile",
+        "save_changes": "Save Changes",
+        "cancel": "Cancel",
+        "saving": "Saving...",
+        "personal_information": "Personal Information",
+        "first_name": "First Name",
+        "last_name": "Last Name",
+        "email": "Email",
+        "country": "Country",
+        "city": "City",
+        "account_status": "Account Status",
+        "active": "Active",
+        "inactive": "Inactive",
+        "statistics": "Statistics",
+        "watchlist_movies": "Watchlist Movies",
+        "ratings_given": "Ratings Given",
+        "comments_written": "Comments Written",
+        "average_rating": "Average Rating",
+        "change_password": "Change Password",
+        "current_password": "Current Password",
+        "new_password": "New Password",
+        "confirm_password": "Confirm Password",
+        "update_password": "Update Password",
+        "updating": "Updating..."
+    }
+}

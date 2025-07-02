@@ -1,0 +1,58 @@
+{
+    "home": {
+        "title": "SuperFilmIzle - En İyi Filmleri İzle",
+        "description": "En yeni ve en popüler filmleri ücretsiz olarak izleyin. En iyi film koleksiyonumuzu keşfedin.",
+        "search_placeholder": "Başlık, özet, oyunculara göre ara...",
+        "search_button": "Ara",
+        "language_switch": "İngilizce'ye Geç",
+        "top_movies": "En Popüler 10 Film"
+    },
+    "header": {
+        "home": "Anasayfa",
+        "watchlist": "İzleme Listem",
+        "profile": "Profil",
+        "login": "Giriş Yap",
+        "logout": "Çıkış Yap",
+        "register": "Kayıt Ol",
+        "welcome": "Hoş geldin, {name}"
+    },
+    "navigation": {
+        "portal": "Anasayfa",
+        "vault": "Koleksiyon",
+        "profile": "Profil",
+        "access": "Giriş Yap",
+        "initialize": "Kayıt Ol",
+        "disconnect": "Çıkış Yap",
+        "greetings": "Merhaba, {username}"
+    },
+    "profile": {
+        "title": "Kullanıcı Profili",
+        "subtitle": "Hesap bilgilerinizi ve ayarlarınızı yönetin",
+        "member_since": "Üyelik tarihi",
+        "admin": "Yönetici",
+        "edit_profile": "Profili Düzenle",
+        "save_changes": "Değişiklikleri Kaydet",
+        "cancel": "İptal",
+        "saving": "Kaydediliyor...",
+        "personal_information": "Kişisel Bilgiler",
+        "first_name": "Ad",
+        "last_name": "Soyad",
+        "email": "E-posta",
+        "country": "Ülke",
+        "city": "Şehir",
+        "account_status": "Hesap Durumu",
+        "active": "Aktif",
+        "inactive": "Pasif",
+        "statistics": "İstatistikler",
+        "watchlist_movies": "İzleme Listesi Filmleri",
+        "ratings_given": "Verilen Değerlendirmeler",
+        "comments_written": "Yazılan Yorumlar",
+        "average_rating": "Ortalama Değerlendirme",
+        "change_password": "Şifre Değiştir",
+        "current_password": "Mevcut Şifre",
+        "new_password": "Yeni Şifre",
+        "confirm_password": "Şifre Onayı",
+        "update_password": "Şifreyi Güncelle",
+        "updating": "Güncelleniyor..."
+    }
+}
