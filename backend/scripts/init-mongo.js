@@ -1,4 +1,3 @@
-// MongoDB initialization script
 db = db.getSiblingDB('imdb_app');
 
 // Create collections
@@ -8,7 +7,6 @@ db.createCollection('ratings');
 db.createCollection('comments');
 db.createCollection('watchlists');
 
-// Create indexes for better performance
 db.users.createIndex({ "email": 1 }, { unique: true });
 db.users.createIndex({ "username": 1 }, { unique: true });
 db.movies.createIndex({ "title": 1 });

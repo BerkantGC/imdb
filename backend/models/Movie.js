@@ -30,11 +30,11 @@ const movieSchema = new mongoose.Schema({
   }],
   releaseYear: {
     type: Number,
-    min: 1888, // First motion picture
+    min: 1888,
     max: new Date().getFullYear() + 5
   },
   duration: {
-    type: Number, // in minutes
+    type: Number,
     min: 1
   },
   imageUrl: {

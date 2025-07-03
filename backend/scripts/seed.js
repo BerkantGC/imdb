@@ -18,30 +18,33 @@ async function seed() {
     await mongoose.connect(MONGO_URI);
     console.log('MongoDB connected');
 
-    // Temizle
-    await Movie.deleteMany({});
-    await User.deleteMany({});
-    await Comment.deleteMany({});
-    await Rating.deleteMany({});
-
     // Kullanıcılar
     const users = await User.insertMany([
       {
-        email: 'john@example.com',
-        password: 'Test1234!',
-        firstName: 'John',
-        lastName: 'Doe',
+        email: 'alex@example.com',
+        password: 'Alex123!',
+        firstName: 'Alex',
+        lastName: 'Johnson',
         country: 'USA',
         city: 'New York',
         profilePhoto: null
       },
       {
-        email: 'ayse@example.com',
-        password: 'Test1234!',
-        firstName: 'Ayşe',
-        lastName: 'Yılmaz',
+        email: 'emma@example.com',
+        password: 'Emma456*',
+        firstName: 'Emma',
+        lastName: 'Williams',
+        country: 'UK',
+        city: 'London',
+        profilePhoto: null
+      },
+      {
+        email: 'mehmet@example.com',
+        password: 'Mehmet789!',
+        firstName: 'Mehmet',
+        lastName: 'Özkan',
         country: 'Turkey',
-        city: 'Istanbul',
+        city: 'Ankara',
         profilePhoto: null
       }
     ]);
@@ -51,162 +54,162 @@ async function seed() {
       {
         title: 'Inception',
         summary: 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea.',
-        actors: ['Leonardo DiCaprio', 'Joseph Gordon-Levitt'],
+        actors: ['Leonardo DiCaprio', 'Joseph Gordon-Levitt', 'Marion Cotillard'],
         director: 'Christopher Nolan',
-        genre: ['Action', 'Sci-Fi'],
+        genre: ['Action', 'Sci-Fi', 'Thriller'],
         releaseYear: 2010,
         duration: 148,
         imageUrl: 'https://m.media-amazon.com/images/I/51s+Q2FJ2lL._AC_.jpg',
         trailerUrl: 'https://www.youtube.com/watch?v=YoHD9XEInc0',
-        averageRating: 8.8,
-        totalRatings: 2,
-        popularityScore: 95,
-        viewCount: 1000,
-        totalComments: 2
-      },
-      {
-        title: 'Interstellar',
-        summary: 'A team of explorers travel through a wormhole in space in an attempt to ensure humanity\'s survival.',
-        actors: ['Matthew McConaughey', 'Anne Hathaway'],
-        director: 'Christopher Nolan',
-        genre: ['Adventure', 'Drama', 'Sci-Fi'],
-        releaseYear: 2014,
-        duration: 169,
-        imageUrl: 'https://m.media-amazon.com/images/I/91kFYg4fX3L._AC_SY679_.jpg',
-        trailerUrl: 'https://www.youtube.com/watch?v=zSWdZVtXT7E',
-        averageRating: 8.6,
-        totalRatings: 2,
-        popularityScore: 90,
-        viewCount: 800,
-        totalComments: 2
-      },
-      {
-        title: 'The Dark Knight',
-        summary: 'Batman faces the Joker, a criminal mastermind who wants to plunge Gotham City into anarchy.',
-        actors: ['Christian Bale', 'Heath Ledger'],
-        director: 'Christopher Nolan',
-        genre: ['Action', 'Crime', 'Drama'],
-        releaseYear: 2008,
-        duration: 152,
-        imageUrl: 'https://m.media-amazon.com/images/I/51EbJjlLw-L._AC_.jpg',
-        trailerUrl: 'https://www.youtube.com/watch?v=EXeTwQWrcwY',
-        averageRating: 9.0,
-        totalRatings: 3,
-        popularityScore: 98,
-        viewCount: 1200,
-        totalComments: 3
-      },
-      {
-        title: 'The Matrix',
-        summary: 'A computer hacker learns about the true nature of his reality and his role in the war against its controllers.',
-        actors: ['Keanu Reeves', 'Laurence Fishburne'],
-        director: 'Lana Wachowski',
-        genre: ['Action', 'Sci-Fi'],
-        releaseYear: 1999,
-        duration: 136,
-        imageUrl: 'https://m.media-amazon.com/images/I/51EG732BV3L._AC_.jpg',
-        trailerUrl: 'https://www.youtube.com/watch?v=vKQi3bBA1y8',
         averageRating: 8.7,
-        totalRatings: 2,
-        popularityScore: 92,
-        viewCount: 950,
-        totalComments: 2
-      },
-      {
-        title: 'Forrest Gump',
-        summary: 'The presidencies of Kennedy and Johnson, the Vietnam War, and more through the eyes of Forrest Gump.',
-        actors: ['Tom Hanks', 'Robin Wright'],
-        director: 'Robert Zemeckis',
-        genre: ['Drama', 'Romance'],
-        releaseYear: 1994,
-        duration: 142,
-        imageUrl: 'https://m.media-amazon.com/images/I/61+zK+f1QSL._AC_SY679_.jpg',
-        trailerUrl: 'https://www.youtube.com/watch?v=bLvqoHBptjg',
-        averageRating: 8.8,
-        totalRatings: 2,
-        popularityScore: 91,
-        viewCount: 900,
-        totalComments: 2
-      },
-      {
-        title: 'Fight Club',
-        summary: 'An insomniac office worker and a soap maker form an underground fight club.',
-        actors: ['Brad Pitt', 'Edward Norton'],
-        director: 'David Fincher',
-        genre: ['Drama'],
-        releaseYear: 1999,
-        duration: 139,
-        imageUrl: 'https://m.media-amazon.com/images/I/51v5ZpFyaFL._AC_.jpg',
-        trailerUrl: 'https://www.youtube.com/watch?v=SUXWAEX2jlg',
-        averageRating: 8.8,
-        totalRatings: 2,
-        popularityScore: 90,
-        viewCount: 850,
-        totalComments: 2
-      },
-      {
-        title: 'Pulp Fiction',
-        summary: 'The lives of two mob hitmen, a boxer, and others intertwine in four tales of violence and redemption.',
-        actors: ['John Travolta', 'Uma Thurman'],
-        director: 'Quentin Tarantino',
-        genre: ['Crime', 'Drama'],
-        releaseYear: 1994,
-        duration: 154,
-        imageUrl: 'https://m.media-amazon.com/images/I/71c05lTE03L._AC_SY679_.jpg',
-        trailerUrl: 'https://www.youtube.com/watch?v=s7EdQ4FqbhY',
-        averageRating: 8.9,
-        totalRatings: 2,
-        popularityScore: 93,
-        viewCount: 980,
-        totalComments: 2
-      },
-      {
-        title: 'The Lord of the Rings: The Fellowship of the Ring',
-        summary: 'A meek Hobbit and eight companions set out on a journey to destroy the One Ring.',
-        actors: ['Elijah Wood', 'Ian McKellen'],
-        director: 'Peter Jackson',
-        genre: ['Adventure', 'Drama', 'Fantasy'],
-        releaseYear: 2001,
-        duration: 178,
-        imageUrl: 'https://m.media-amazon.com/images/I/51Qvs9i5a%2BL._AC_.jpg',
-        trailerUrl: 'https://www.youtube.com/watch?v=V75dMMIW2B4',
-        averageRating: 8.8,
-        totalRatings: 2,
-        popularityScore: 94,
-        viewCount: 1100,
-        totalComments: 2
-      },
-      {
-        title: 'The Shawshank Redemption',
-        summary: 'Two imprisoned men bond over a number of years, finding solace and eventual redemption.',
-        actors: ['Tim Robbins', 'Morgan Freeman'],
-        director: 'Frank Darabont',
-        genre: ['Drama'],
-        releaseYear: 1994,
-        duration: 142,
-        imageUrl: 'https://m.media-amazon.com/images/I/51NiGlapXlL._AC_.jpg',
-        trailerUrl: 'https://www.youtube.com/watch?v=6hB3S9bIaco',
-        averageRating: 9.3,
         totalRatings: 3,
-        popularityScore: 99,
-        viewCount: 1300,
+        popularityScore: 94,
+        viewCount: 1150,
         totalComments: 3
       },
       {
-        title: 'Gladiator',
-        summary: 'A former Roman General sets out to exact vengeance against the corrupt emperor.',
-        actors: ['Russell Crowe', 'Joaquin Phoenix'],
-        director: 'Ridley Scott',
-        genre: ['Action', 'Adventure', 'Drama'],
-        releaseYear: 2000,
-        duration: 155,
-        imageUrl: 'https://m.media-amazon.com/images/I/51A9ZK8CZGL._AC_.jpg',
-        trailerUrl: 'https://www.youtube.com/watch?v=owK1qxDselE',
+        title: 'Parasite',
+        summary: 'A poor family schemes to become employed by a wealthy family by infiltrating their household.',
+        actors: ['Song Kang-ho', 'Lee Sun-kyun', 'Cho Yeo-jeong'],
+        director: 'Bong Joon-ho',
+        genre: ['Comedy', 'Drama', 'Thriller'],
+        releaseYear: 2019,
+        duration: 132,
+        imageUrl: 'https://m.media-amazon.com/images/I/71f4WYlFriL._AC_SY679_.jpg',
+        trailerUrl: 'https://www.youtube.com/watch?v=5xH0HfJHsaY',
         averageRating: 8.5,
         totalRatings: 2,
-        popularityScore: 89,
-        viewCount: 800,
+        popularityScore: 87,
+        viewCount: 920,
         totalComments: 2
+      },
+      {
+        title: 'Spirited Away',
+        summary: 'During her family\'s move to the suburbs, a 10-year-old girl wanders into a world ruled by spirits.',
+        actors: ['Rumi Hiiragi', 'Miyu Irino', 'Mari Natsuki'],
+        director: 'Hayao Miyazaki',
+        genre: ['Animation', 'Adventure', 'Family'],
+        releaseYear: 2001,
+        duration: 125,
+        imageUrl: 'https://m.media-amazon.com/images/I/51hcCDvRZBL._AC_.jpg',
+        trailerUrl: 'https://www.youtube.com/watch?v=ByXuk9QqQkk',
+        averageRating: 9.1,
+        totalRatings: 3,
+        popularityScore: 96,
+        viewCount: 1280,
+        totalComments: 3
+      },
+      {
+        title: 'Dune',
+        summary: 'A noble family becomes embroiled in a war for control over the galaxy\'s most valuable asset.',
+        actors: ['Timothée Chalamet', 'Rebecca Ferguson', 'Oscar Isaac'],
+        director: 'Denis Villeneuve',
+        genre: ['Action', 'Adventure', 'Sci-Fi'],
+        releaseYear: 2021,
+        duration: 155,
+        imageUrl: 'https://m.media-amazon.com/images/I/71jGcQyxgNL._AC_SY679_.jpg',
+        trailerUrl: 'https://www.youtube.com/watch?v=n9xhJrPXop4',
+        averageRating: 8.2,
+        totalRatings: 2,
+        popularityScore: 85,
+        viewCount: 780,
+        totalComments: 2
+      },
+      {
+        title: 'La La Land',
+        summary: 'A jazz musician and an aspiring actress meet and fall in love in Los Angeles.',
+        actors: ['Ryan Gosling', 'Emma Stone', 'John Legend'],
+        director: 'Damien Chazelle',
+        genre: ['Comedy', 'Drama', 'Music'],
+        releaseYear: 2016,
+        duration: 128,
+        imageUrl: 'https://m.media-amazon.com/images/I/71vPyJZCupL._AC_SY679_.jpg',
+        trailerUrl: 'https://www.youtube.com/watch?v=0pdqf4P9MB8',
+        averageRating: 8.0,
+        totalRatings: 3,
+        popularityScore: 82,
+        viewCount: 650,
+        totalComments: 3
+      },
+      {
+        title: 'Blade Runner 2049',
+        summary: 'A young blade runner discovers a secret that could plunge society into chaos.',
+        actors: ['Ryan Gosling', 'Harrison Ford', 'Ana de Armas'],
+        director: 'Denis Villeneuve',
+        genre: ['Action', 'Drama', 'Sci-Fi'],
+        releaseYear: 2017,
+        duration: 164,
+        imageUrl: 'https://m.media-amazon.com/images/I/61S5s5lMzpL._AC_SY679_.jpg',
+        trailerUrl: 'https://www.youtube.com/watch?v=gCcx85zbxz4',
+        averageRating: 8.9,
+        totalRatings: 2,
+        popularityScore: 91,
+        viewCount: 1050,
+        totalComments: 2
+      },
+      {
+        title: 'The Grand Budapest Hotel',
+        summary: 'The adventures of a legendary concierge at a famous European hotel.',
+        actors: ['Ralph Fiennes', 'F. Murray Abraham', 'Mathieu Amalric'],
+        director: 'Wes Anderson',
+        genre: ['Adventure', 'Comedy', 'Crime'],
+        releaseYear: 2014,
+        duration: 99,
+        imageUrl: 'https://m.media-amazon.com/images/I/71zp2FZBIdL._AC_SY679_.jpg',
+        trailerUrl: 'https://www.youtube.com/watch?v=1Fg5iWmQjwk',
+        averageRating: 8.4,
+        totalRatings: 2,
+        popularityScore: 79,
+        viewCount: 590,
+        totalComments: 2
+      },
+      {
+        title: 'Mad Max: Fury Road',
+        summary: 'In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler.',
+        actors: ['Tom Hardy', 'Charlize Theron', 'Nicholas Hoult'],
+        director: 'George Miller',
+        genre: ['Action', 'Adventure', 'Sci-Fi'],
+        releaseYear: 2015,
+        duration: 120,
+        imageUrl: 'https://m.media-amazon.com/images/I/61kTpJo-9UL._AC_SY679_.jpg',
+        trailerUrl: 'https://www.youtube.com/watch?v=hEJnMQG9ev8',
+        averageRating: 8.6,
+        totalRatings: 3,
+        popularityScore: 88,
+        viewCount: 870,
+        totalComments: 3
+      },
+      {
+        title: 'Moonlight',
+        summary: 'A young African-American man grapples with his identity and sexuality.',
+        actors: ['Trevante Rhodes', 'André Holland', 'Janelle Monáe'],
+        director: 'Barry Jenkins',
+        genre: ['Drama'],
+        releaseYear: 2016,
+        duration: 111,
+        imageUrl: 'https://m.media-amazon.com/images/I/71ghgX1+wpL._AC_SY679_.jpg',
+        trailerUrl: 'https://www.youtube.com/watch?v=9NJj12tJzqc',
+        averageRating: 8.3,
+        totalRatings: 2,
+        popularityScore: 76,
+        viewCount: 520,
+        totalComments: 2
+      },
+      {
+        title: 'Everything Everywhere All at Once',
+        summary: 'A Chinese-American woman gets caught up in an insane adventure.',
+        actors: ['Michelle Yeoh', 'Stephanie Hsu', 'Ke Huy Quan'],
+        director: 'Daniels',
+        genre: ['Action', 'Adventure', 'Comedy'],
+        releaseYear: 2022,
+        duration: 139,
+        imageUrl: 'https://m.media-amazon.com/images/I/71iTjLIjlHL._AC_SY679_.jpg',
+        trailerUrl: 'https://www.youtube.com/watch?v=WLcq7RllyNw',
+        averageRating: 9.2,
+        totalRatings: 3,
+        popularityScore: 98,
+        viewCount: 1400,
+        totalComments: 3
       }
     ]);
 
@@ -215,52 +218,52 @@ async function seed() {
       {
         user: users[0]._id,
         movie: movies[0]._id,
-        content: 'Harika bir film!'
+        content: 'Mind-bending masterpiece! Nolan at his finest.'
       },
       {
         user: users[1]._id,
         movie: movies[1]._id,
-        content: 'Bilim kurgu sevenler için mükemmel.'
+        content: 'Brilliant social commentary wrapped in a thriller.'
       },
       {
-        user: users[0]._id,
+        user: users[2]._id,
         movie: movies[2]._id,
-        content: 'Heath Ledger müthiş bir Joker olmuş!'
-      },
-      {
-        user: users[1]._id,
-        movie: movies[3]._id,
-        content: 'Matrix felsefesi çok etkileyici.'
+        content: 'Miyazaki\'s animation is pure magic!'
       },
       {
         user: users[0]._id,
-        movie: movies[4]._id,
-        content: 'Forrest Gump çok duygusal.'
+        movie: movies[3]._id,
+        content: 'Villeneuve created a stunning visual feast.'
       },
       {
         user: users[1]._id,
+        movie: movies[4]._id,
+        content: 'The music and cinematography are phenomenal.'
+      },
+      {
+        user: users[2]._id,
         movie: movies[5]._id,
-        content: 'Fight Club kült bir film.'
+        content: 'A worthy sequel that expands the universe beautifully.'
       },
       {
         user: users[0]._id,
         movie: movies[6]._id,
-        content: 'Pulp Fiction çok farklı bir anlatıma sahip.'
+        content: 'Wes Anderson\'s unique style is perfectly executed.'
       },
       {
         user: users[1]._id,
         movie: movies[7]._id,
-        content: 'Yüzüklerin Efendisi efsane.'
+        content: 'Non-stop action with incredible practical effects!'
+      },
+      {
+        user: users[2]._id,
+        movie: movies[8]._id,
+        content: 'A deeply moving and powerful story.'
       },
       {
         user: users[0]._id,
-        movie: movies[8]._id,
-        content: 'Shawshank Redemption insanı derinden etkiliyor.'
-      },
-      {
-        user: users[1]._id,
         movie: movies[9]._id,
-        content: 'Gladyatör sahneleri çok iyiydi.'
+        content: 'Absolutely insane in the best possible way!'
       }
     ]);
 
@@ -276,55 +279,55 @@ async function seed() {
         user: users[1]._id,
         movie: movies[1]._id,
         rating: 8,
-        userCountry: 'Turkey'
+        userCountry: 'UK'
       },
       {
-        user: users[0]._id,
+        user: users[2]._id,
         movie: movies[2]._id,
         rating: 10,
-        userCountry: 'USA'
-      },
-      {
-        user: users[1]._id,
-        movie: movies[3]._id,
-        rating: 9,
         userCountry: 'Turkey'
       },
       {
         user: users[0]._id,
-        movie: movies[4]._id,
-        rating: 9,
+        movie: movies[3]._id,
+        rating: 8,
         userCountry: 'USA'
       },
       {
         user: users[1]._id,
+        movie: movies[4]._id,
+        rating: 7,
+        userCountry: 'UK'
+      },
+      {
+        user: users[2]._id,
         movie: movies[5]._id,
-        rating: 8,
+        rating: 9,
         userCountry: 'Turkey'
       },
       {
         user: users[0]._id,
         movie: movies[6]._id,
-        rating: 9,
+        rating: 8,
         userCountry: 'USA'
       },
       {
         user: users[1]._id,
         movie: movies[7]._id,
-        rating: 10,
+        rating: 9,
+        userCountry: 'UK'
+      },
+      {
+        user: users[2]._id,
+        movie: movies[8]._id,
+        rating: 8,
         userCountry: 'Turkey'
       },
       {
         user: users[0]._id,
-        movie: movies[8]._id,
+        movie: movies[9]._id,
         rating: 10,
         userCountry: 'USA'
-      },
-      {
-        user: users[1]._id,
-        movie: movies[9]._id,
-        rating: 8,
-        userCountry: 'Turkey'
       }
     ]);
 

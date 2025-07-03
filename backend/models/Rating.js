@@ -20,11 +20,6 @@ const ratingSchema = new mongoose.Schema({
       validator: Number.isInteger,
       message: 'Rating must be an integer between 1 and 10'
     }
-  },
-  userCountry: {
-    type: String,
-    required: true,
-    trim: true
   }
 }, {
   timestamps: true

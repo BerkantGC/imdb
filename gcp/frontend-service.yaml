@@ -1,0 +1,39 @@
+# Google Cloud Run service configuration for frontend
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: imdb-frontend
+  annotations:
+    run.googleapis.com/ingress: all
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/maxScale: "10"
+        autoscaling.knative.dev/minScale: "1"
+        run.googleapis.com/execution-environment: gen2
+    spec:
+      containerConcurrency: 100
+      containers:
+      - image: gcr.io/PROJECT_ID/imdb-frontend:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: VITE_API_BASE_URL
+          value: "https://imdb-backend-HASH-uc.a.run.app"
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 512Mi
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 80
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 5
